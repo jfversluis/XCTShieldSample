@@ -10,9 +10,15 @@ namespace XCTShieldSample
 {
     public partial class MainPage : ContentPage
     {
+        public Command TappedShield { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
+
+            TappedShield = new Command(() => DisplayAlert("Subscribed", "You're now subscribed, thanks!", "OK"));
+
+            BindingContext = this;
         }
     }
 }
